@@ -1,7 +1,8 @@
 {
   "name": "tauri-app",
   "scripts": {
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "build": "tauri build"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.0.1"
