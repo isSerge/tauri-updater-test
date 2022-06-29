@@ -29,11 +29,11 @@ jobs:
         sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
     - name: install app dependencies and build it
       run: yarn && yarn build
+        TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+        TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
     - uses: tauri-apps/tauri-action@v0.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-        TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
       with:
         tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
         releaseName: "App v__VERSION__"
