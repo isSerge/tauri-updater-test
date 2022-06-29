@@ -3,7 +3,6 @@ on: workflow_dispatch
 
 jobs:
   publish-tauri:
-    environment: production
     strategy:
       fail-fast: false
       matrix:
